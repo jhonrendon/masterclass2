@@ -6,9 +6,7 @@
 package co.usa.ciclo3.ciclo3.web;
 
 import co.usa.ciclo3.ciclo3.model.Category;
-import co.usa.ciclo3.ciclo3.model.Papeleria;
 import co.usa.ciclo3.ciclo3.service.CategoryService;
-import co.usa.ciclo3.ciclo3.service.PapeleriaService;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;

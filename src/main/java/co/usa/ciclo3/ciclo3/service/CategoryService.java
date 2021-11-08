@@ -6,7 +6,6 @@
 package co.usa.ciclo3.ciclo3.service;
 
 import co.usa.ciclo3.ciclo3.model.Category;
-import co.usa.ciclo3.ciclo3.model.Papeleria;
 import co.usa.ciclo3.ciclo3.repository.crud.CategoryRepository;
 import java.util.List;
 import java.util.Optional;
