@@ -5,8 +5,9 @@
  */
 package co.usa.ciclo3.ciclo3.service;
 
+import co.usa.ciclo3.ciclo3.model.Category;
 import co.usa.ciclo3.ciclo3.model.Papeleria;
-import co.usa.ciclo3.ciclo3.repository.crud.PapeleriaRepository;
+import co.usa.ciclo3.ciclo3.repository.crud.CategoryRepository;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,22 +18,22 @@ import org.springframework.stereotype.Service;
  * @author jacke
  */
 @Service
-public class PapeleriaService {
+public class CategoryService {
     @Autowired
-    private PapeleriaRepository papeleriaRepository;
-    public List<Papeleria>getAll(){
-        return papeleriaRepository.getAll();
+    private CategoryRepository categoryRepository;
+    public List<Category>getAll(){
+        return categoryRepository.getAll();
     }
-    public Optional<Papeleria> getPapeleria(int id){
-        return papeleriaRepository.getPapeleria(id);
+    public Optional<Category> getCategory(int id){
+        return categoryRepository.getCategory(id);
     }
-    public Papeleria save (Papeleria p){
+    public Category save (Category p){
         if (p.getId()==null){
-            return papeleriaRepository.save(p);
+            return categoryRepository.save(p);
         }else{
-            Optional<Papeleria> paux=papeleriaRepository.getPapeleria(p.getId());
+            Optional<Category> paux=categoryRepository.getCategory(p.getId());
             if(paux.isEmpty()){
-                return papeleriaRepository.save(p);
+                return categoryRepository.save(p);
             }else{
                 return p;
             }
@@ -41,3 +42,4 @@ public class PapeleriaService {
 
     
 }
+

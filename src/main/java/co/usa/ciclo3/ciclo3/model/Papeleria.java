@@ -5,11 +5,14 @@
  */
 package co.usa.ciclo3.ciclo3.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 /**
@@ -27,6 +30,11 @@ public class Papeleria implements Serializable {
     private Integer año;
     private String descripción;
     private Integer categoría;
+    
+    @ManyToOne
+    @JoinColumn(name="categoryId")
+    @JsonIgnoreProperties("papeleria")
+    private Category category;
 
     public Integer getId() {
         return id;
@@ -75,6 +83,16 @@ public class Papeleria implements Serializable {
     public void setCategoría(Integer categoría) {
         this.categoría = categoría;
     }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
+    
     
     
 }
