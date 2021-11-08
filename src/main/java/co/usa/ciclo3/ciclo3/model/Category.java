@@ -28,7 +28,7 @@ public class Category implements Serializable {
     
     private Integer id;
     private String nombre;
-    private String descripción;
+    private String {;
     
     @OneToMany(cascade = {CascadeType.PERSIST},mappedBy ="category")
     @JsonIgnoreProperties("category")
@@ -65,6 +65,8 @@ public class Category implements Serializable {
     public void setPapeleria(List<Papeleria> papeleria) {
         this.papeleria = papeleria;
     }
+
+    
 
     
     

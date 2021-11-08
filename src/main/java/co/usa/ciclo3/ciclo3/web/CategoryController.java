@@ -31,11 +31,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/Category")
 @CrossOrigin(origins="*",methods={RequestMethod.GET,RequestMethod.POST,RequestMethod.PUT,RequestMethod.DELETE})
 public class CategoryController {
-     @Autowired
+    @Autowired
     private CategoryService categoryService;
     
     @GetMapping("/all")
-    public List<Category> getCategorys(){
+    public List<Category> getCategory(){
         return categoryService.getAll();
         
     }
