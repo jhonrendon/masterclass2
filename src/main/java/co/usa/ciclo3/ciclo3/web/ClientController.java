@@ -5,8 +5,10 @@
  */
 package co.usa.ciclo3.ciclo3.web;
 
-import co.usa.ciclo3.ciclo3.model.Papeleria;
-import co.usa.ciclo3.ciclo3.service.PapeleriaService;
+
+import co.usa.ciclo3.ciclo3.model.Client;
+
+import co.usa.ciclo3.ciclo3.service.ClientService;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,20 +28,20 @@ import org.springframework.web.bind.annotation.RestController;
  * @author jacke
  */
 @RestController
-@RequestMapping("/api/Papeleria")
+@RequestMapping("/api/Client")
 @CrossOrigin(origins="*",methods={RequestMethod.GET,RequestMethod.POST,RequestMethod.PUT,RequestMethod.DELETE})
-public class PapeleriaController {
-     @Autowired
-    private PapeleriaService papeleriaService;
+public class ClientController {
+    @Autowired
+    private ClientService clientService;
     
     @GetMapping("/all")
-    public List<Papeleria> getPapeleria(){
-        return papeleriaService.getAll();
+    public List<Client> getCliente(){
+        return clientService.getAll();
         
     }
     @GetMapping ("/{id}")
-    public Optional<Papeleria> getPapeleria(@PathVariable("id") int id){
-        return papeleriaService.getPapeleria(id);
+    public Optional<Client> getClient(@PathVariable("id") int id){
+        return clientService.getClient(id);
     
     
     }
@@ -47,9 +49,8 @@ public class PapeleriaController {
     
     @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)
-    public Papeleria save(@RequestBody Papeleria p){
-        return papeleriaService.save(p);
+    public Client save(@RequestBody Client c){
+        return clientService.save(c);
     }
 }
 
-    

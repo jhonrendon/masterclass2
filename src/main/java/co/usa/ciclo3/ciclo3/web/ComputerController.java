@@ -5,8 +5,8 @@
  */
 package co.usa.ciclo3.ciclo3.web;
 
-import co.usa.ciclo3.ciclo3.model.Category;
-import co.usa.ciclo3.ciclo3.service.CategoryService;
+import co.usa.ciclo3.ciclo3.model.Computer;
+import co.usa.ciclo3.ciclo3.service.ComputerService;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,20 +26,20 @@ import org.springframework.web.bind.annotation.RestController;
  * @author jacke
  */
 @RestController
-@RequestMapping("/api/Category")
+@RequestMapping("/api/Computer")
 @CrossOrigin(origins="*",methods={RequestMethod.GET,RequestMethod.POST,RequestMethod.PUT,RequestMethod.DELETE})
-public class CategoryController {
-    @Autowired
-    private CategoryService categoryService;
+public class ComputerController {
+     @Autowired
+    private ComputerService computerService;
     
     @GetMapping("/all")
-    public List<Category> getCategorys(){
-        return categoryService.getAll();
+    public List<Computer> getComputer(){
+        return computerService.getAll();
         
     }
     @GetMapping ("/{id}")
-    public Optional<Category> getCategory(@PathVariable("id") int id){
-        return categoryService.getCategory(id);
+    public Optional<Computer> getComputer(@PathVariable("id") int id){
+        return computerService.getComputer(id);
     
     
     }
@@ -47,8 +47,9 @@ public class CategoryController {
     
     @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)
-    public Category save(@RequestBody Category c){
-        return categoryService.save(c);
+    public Computer save(@RequestBody Computer p){
+        return computerService.save(p);
     }
 }
 
+    

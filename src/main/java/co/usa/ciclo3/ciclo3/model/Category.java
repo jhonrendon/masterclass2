@@ -5,15 +5,18 @@
  */
 package co.usa.ciclo3.ciclo3.model;
 
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.io.Serializable;
 import java.util.List;
 import javax.persistence.CascadeType;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+
 import javax.persistence.Table;
 
 /**
@@ -21,18 +24,19 @@ import javax.persistence.Table;
  * @author jacke
  */
 @Entity
-@Table(name="Category")
+@Table(name="category")
 public class Category implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    
     private Integer id;
-    private String nombre;
-    private String descripción;
+    private String name;
+    private String description;
     
-    @OneToMany(cascade = {CascadeType.PERSIST},mappedBy ="category")
+    @OneToMany(cascade={CascadeType.PERSIST},mappedBy="category")
     @JsonIgnoreProperties("category")
-    public List<Papeleria> papeleria;
+    public List<Computer> computer;
+    
+    
 
     public Integer getId() {
         return id;
@@ -42,28 +46,28 @@ public class Category implements Serializable {
         this.id = id;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getName() {
+        return name;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getDescripción() {
-        return descripción;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDescripción(String descripción) {
-        this.descripción = descripción;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public List<Papeleria> getPapeleria() {
-        return papeleria;
+    public List<Computer> getComputer() {
+        return computer;
     }
 
-    public void setPapeleria(List<Papeleria> papeleria) {
-        this.papeleria = papeleria;
+    public void setComputer(List<Computer> computer) {
+        this.computer = computer;
     }
 
     
@@ -71,8 +75,10 @@ public class Category implements Serializable {
     
 
     
+    
 
     
+
     
     
     

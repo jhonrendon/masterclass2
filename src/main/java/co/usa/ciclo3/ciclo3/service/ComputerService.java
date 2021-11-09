@@ -5,8 +5,8 @@
  */
 package co.usa.ciclo3.ciclo3.service;
 
-import co.usa.ciclo3.ciclo3.model.Category;
-import co.usa.ciclo3.ciclo3.repository.crud.CategoryRepository;
+import co.usa.ciclo3.ciclo3.model.Computer;
+import co.usa.ciclo3.ciclo3.repository.ComputerRepository;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,22 +17,22 @@ import org.springframework.stereotype.Service;
  * @author jacke
  */
 @Service
-public class CategoryService {
+public class ComputerService {
     @Autowired
-    private CategoryRepository categoryRepository;
-    public List<Category>getAll(){
-        return categoryRepository.getAll();
+    private ComputerRepository computerRepository;
+    public List<Computer>getAll(){
+        return computerRepository.getAll();
     }
-    public Optional<Category> getCategory(int id){
-        return categoryRepository.getCategory(id);
+    public Optional<Computer> getComputer(int id){
+        return computerRepository.getComputer(id);
     }
-    public Category save (Category p){
+    public Computer save (Computer p){
         if (p.getId()==null){
-            return categoryRepository.save(p);
+            return computerRepository.save(p);
         }else{
-            Optional<Category> paux=categoryRepository.getCategory(p.getId());
+            Optional<Computer> paux=computerRepository.getComputer(p.getId());
             if(paux.equals(p)){
-                return categoryRepository.save(p);
+                return computerRepository.save(p);
             }else{
                 return p;
             }
@@ -41,4 +41,3 @@ public class CategoryService {
 
     
 }
-

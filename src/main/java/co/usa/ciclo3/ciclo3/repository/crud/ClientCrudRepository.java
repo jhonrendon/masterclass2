@@ -5,13 +5,13 @@
  */
 package co.usa.ciclo3.ciclo3.repository.crud;
 
-import co.usa.ciclo3.ciclo3.model.Papeleria;
+import co.usa.ciclo3.ciclo3.model.Client;
 import org.springframework.data.repository.CrudRepository;
 
 /**
  *
  * @author jacke
  */
-public interface PapeleriaCrudRepository extends CrudRepository<Papeleria,Integer>{
+public interface ClientCrudRepository extends CrudRepository<Client,Integer> {
     
 }
